@@ -1,0 +1,133 @@
+@BlogApi_HostAddress = https://localhost:7226
+
+### REGISTER
+POST {{BlogApi_HostAddress}}/api/auth/register
+Content-Type: application/json
+
+{
+  "username": "mert",
+  "email": "mert@test.com",
+  "password": "123456"
+}
+
+### LOGIN
+POST {{BlogApi_HostAddress}}/api/auth/login
+Content-Type: application/json
+
+{
+  "email": "mert@test.com",
+  "password": "123456"
+}
+### TOKEN OLMADAN TEST
+GET {{BlogApi_HostAddress}}/api/auth/test
+
+### TOKEN ILE TEST
+GET {{BlogApi_HostAddress}}/api/auth/test
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1laWRlbnRpZmllciI6IjEiLCJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9lbWFpbGFkZHJlc3MiOiJtZXJ0QHRlc3QuY29tIiwiaHR0cDovL3NjaGVtYXMubWljcm9zb2Z0LmNvbS93cy8yMDA4LzA2L2lkZW50aXR5L2NsYWltcy9yb2xlIjoiVXNlciIsImV4cCI6MTc5MDg1MTczNywiaXNzIjoiQmxvZ0FwaSIsImF1ZCI6IkJsb2dGcm9udGVuZCJ9.V3V96LBaMJdADEdCehXzukIstzkPFC89kT5qBAEL3N0
+
+### ADMIN TEST
+GET {{BlogApi_HostAddress}}/api/auth/admin-test
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1laWRlbnRpZmllciI6IjEiLCJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9lbWFpbGFkZHJlc3MiOiJtZXJ0QHRlc3QuY29tIiwiaHR0cDovL3NjaGVtYXMubWljcm9zb2Z0LmNvbS93cy8yMDA4LzA2L2lkZW50aXR5L2NsYWltcy9yb2xlIjoiVXNlciIsImV4cCI6MTc5MDg1MTczNywiaXNzIjoiQmxvZ0FwaSIsImF1ZCI6IkJsb2dGcm9udGVuZCJ9.V3V96LBaMJdADEdCehXzukIstzkPFC89kT5qBAEL3N0
+
+### BLOG EKLE
+POST {{BlogApi_HostAddress}}/api/post
+Content-Type: application/json
+Authorization: Bearer BURAYA_YENI_ADMIN_TOKEN
+
+{
+  "title": "İlk Blog Yazım",
+  "content": "Bu benim ASP.NET Core ile oluşturduğum ilk blog yazısı.",
+  "summary": "İlk blog yazısı"
+}
+
+### BLOG EKLE
+POST {{BlogApi_HostAddress}}/api/post
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1laWRlbnRpZmllciI6IjEiLCJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9lbWFpbGFkZHJlc3MiOiJtZXJ0QHRlc3QuY29tIiwiaHR0cDovL3NjaGVtYXMubWljcm9zb2Z0LmNvbS93cy8yMDA4LzA2L2lkZW50aXR5L2NsYWltcy9yb2xlIjoiQWRtaW4iLCJleHAiOjE3OTA4NTg5NjcsImlzcyI6IkJsb2dBcGkiLCJhdWQiOiJCbG9nRnJvbnRlbmQifQ.qnm9FDTI1IUUPrfMM4E8J9HWeBGZzLVhdzyF9UitVMw
+
+{
+  "title": "İlk Blog Yazım",
+  "content": "Bu benim ASP.NET Core ile oluşturduğum ilk blog yazısı.",
+  "summary": "İlk blog yazısı"
+}
+
+### BLOG'LARI GETİR
+GET {{BlogApi_HostAddress}}/api/post
+
+### TEK BLOG GETİR
+GET {{BlogApi_HostAddress}}/api/post/1
+
+### BLOG GÜNCELLE
+PUT {{BlogApi_HostAddress}}/api/post/1
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1laWRlbnRpZmllciI6IjEiLCJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9lbWFpbGFkZHJlc3MiOiJtZXJ0QHRlc3QuY29tIiwiaHR0cDovL3NjaGVtYXMubWljcm9zb2Z0LmNvbS93cy8yMDA4LzA2L2lkZW50aXR5L2NsYWltcy9yb2xlIjoiQWRtaW4iLCJleHAiOjE3OTA4NjEzMTEsImlzcyI6IkJsb2dBcGkiLCJhdWQiOiJCbG9nRnJvbnRlbmQifQ.ohuziiqWrTV_FCvySHumchfR7ZdjRr1V5b6i4F1PlQ4
+
+{
+  "title": "Güncellenmiş Blog Başlığı",
+  "content": "Bu yazının içeriğini güncelledim.",
+  "summary": "Güncellenmiş özet"
+}
+
+### BLOG SİL
+DELETE {{BlogApi_HostAddress}}/api/post/1
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1laWRlbnRpZmllciI6IjEiLCJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9lbWFpbGFkZHJlc3MiOiJtZXJ0QHRlc3QuY29tIiwiaHR0cDovL3NjaGVtYXMubWljcm9zb2Z0LmNvbS93cy8yMDA4LzA2L2lkZW50aXR5L2NsYWltcy9yb2xlIjoiQWRtaW4iLCJleHAiOjE3OTA4NjEzMTEsImlzcyI6IkJsb2dBcGkiLCJhdWQiOiJCbG9nRnJvbnRlbmQifQ.ohuziiqWrTV_FCvySHumchfR7ZdjRr1V5b6i4F1PlQ4
+
+### BLOG OLUŞTUR
+POST {{BlogApi_HostAddress}}/api/post
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1laWRlbnRpZmllciI6IjEiLCJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9lbWFpbGFkZHJlc3MiOiJtZXJ0QHRlc3QuY29tIiwiaHR0cDovL3NjaGVtYXMubWljcm9zb2Z0LmNvbS93cy8yMDA4LzA2L2lkZW50aXR5L2NsYWltcy9yb2xlIjoiQWRtaW4iLCJleHAiOjE3OTA5MzIxMDUsImlzcyI6IkJsb2dBcGkiLCJhdWQiOiJCbG9nRnJvbnRlbmQifQ.AeeyT7TxYEX_NZUlWbXmQCu5ZvlOBXIndCy_fUpSz2I
+
+
+{
+  "title": "Test Blog",
+  "content": "Yorum test edeceğimiz blog.",
+  "summary": "Test"
+}
+
+### POSTUN YORUMLARINI GETİR
+GET {{BlogApi_HostAddress}}/api/posts/3/comments
+
+### YORUM EKLE
+POST {{BlogApi_HostAddress}}/api/posts/3/comments
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1laWRlbnRpZmllciI6IjEiLCJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9lbWFpbGFkZHJlc3MiOiJtZXJ0QHRlc3QuY29tIiwiaHR0cDovL3NjaGVtYXMubWljcm9zb2Z0LmNvbS93cy8yMDA4LzA2L2lkZW50aXR5L2NsYWltcy9yb2xlIjoiQWRtaW4iLCJleHAiOjE3OTA5MzIxMDUsImlzcyI6IkJsb2dBcGkiLCJhdWQiOiJCbG9nRnJvbnRlbmQifQ.AeeyT7TxYEX_NZUlWbXmQCu5ZvlOBXIndCy_fUpSz2I
+
+{
+  "content": "Bu benim ilk yorumum."
+}
+
+### YORUM GÜNCELLE
+PUT {{BlogApi_HostAddress}}/api/posts/3/comments/1
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1laWRlbnRpZmllciI6IjEiLCJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9lbWFpbGFkZHJlc3MiOiJtZXJ0QHRlc3QuY29tIiwiaHR0cDovL3NjaGVtYXMubWljcm9zb2Z0LmNvbS93cy8yMDA4LzA2L2lkZW50aXR5L2NsYWltcy9yb2xlIjoiQWRtaW4iLCJleHAiOjE3OTA5MzIxMDUsImlzcyI6IkJsb2dBcGkiLCJhdWQiOiJCbG9nRnJvbnRlbmQifQ.AeeyT7TxYEX_NZUlWbXmQCu5ZvlOBXIndCy_fUpSz2I
+
+{
+  "content": "Yorumumu güncelledim."
+}
+
+### YORUM SİL
+DELETE {{BlogApi_HostAddress}}/api/posts/3/comments/1
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1laWRlbnRpZmllciI6IjEiLCJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9lbWFpbGFkZHJlc3MiOiJtZXJ0QHRlc3QuY29tIiwiaHR0cDovL3NjaGVtYXMubWljcm9zb2Z0LmNvbS93cy8yMDA4LzA2L2lkZW50aXR5L2NsYWltcy9yb2xlIjoiQWRtaW4iLCJleHAiOjE3OTA5MzIxMDUsImlzcyI6IkJsb2dBcGkiLCJhdWQiOiJCbG9nRnJvbnRlbmQifQ.AeeyT7TxYEX_NZUlWbXmQCu5ZvlOBXIndCy_fUpSz2I
+
+### REFRESH TOKEN
+POST {{BlogApi_HostAddress}}/api/auth/refresh
+Content-Type: application/json
+
+{
+  "refreshToken": "652B25298E45C91A37A1F7B6184A524025C578D6EFA8097840E1DBE5DBF8526770AA6CFDB4E9B56FDF972257F624862AB29C25600F572C5E665E3542590076CB"
+
+
+}
+
+### LOGOUT
+POST {{BlogApi_HostAddress}}/api/auth/logout
+Content-Type: application/json
+
+{
+  "refreshToken": "652B25298E45C91A37A1F7B6184A524025C578D6EFA8097840E1DBE5DBF8526770AA6CFDB4E9B56FDF972257F624862AB29C25600F572C5E665E3542590076CB"
+
+}
+
+### PROFİLİM
+GET {{BlogApi_HostAddress}}/api/auth/me
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1laWRlbnRpZmllciI6IjEiLCJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9lbWFpbGFkZHJlc3MiOiJtZXJ0QHRlc3QuY29tIiwiaHR0cDovL3NjaGVtYXMubWljcm9zb2Z0LmNvbS93cy8yMDA4LzA2L2lkZW50aXR5L2NsYWltcy9yb2xlIjoiQWRtaW4iLCJleHAiOjE3OTA5NTEyMDMsImlzcyI6IkJsb2dBcGkiLCJhdWQiOiJCbG9nRnJvbnRlbmQifQ.B7zuaAdaavx5Lx5FGGdl7pwpIbv1SkMONsW2zuBzjqE

@@ -1,0 +1,16 @@
+:root {
+  color-scheme: light;
+  --color-primary-green: #33b767;
+  --color-primary-teal: #269774;
+  --color-primary-blue: #1a6786;
+  --color-background: #f7faf9;
+  --color-surface: #fff;
+  --color-text: #1f2937;
+  --color-text-muted: #667085;
+  --color-border: #dde9e5;
+  --color-accent: #167555;
+  --color-danger: #b42318;
+  --radius: 12px;
+  --shadow: 0 4px 18px rgb(30 70 54 / 3%);
+  --font: 'Inter', system-ui, sans-serif;
+}
