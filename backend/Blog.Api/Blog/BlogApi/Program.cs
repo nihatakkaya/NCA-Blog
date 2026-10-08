@@ -13,12 +13,24 @@ using BlogApi.Exceptions;
 var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddControllers();
-builder.Services.AddCors(options => //cors frontend için 
+var frontendUrl = builder.Configuration["FrontendUrl"];
+
+builder.Services.AddCors(options =>
 {
     options.AddPolicy("VueFrontend", policy =>
     {
+        var origins = new List<string>
+        {
+            "http://localhost:5173"
+        };
+
+        if (!string.IsNullOrWhiteSpace(frontendUrl))
+        {
+            origins.Add(frontendUrl);
+        }
+
         policy
-            .WithOrigins("http://localhost:5173")   //localhost5173 te çalışan frontend bu backende ulaşabilmesi için
+            .WithOrigins(origins.ToArray())
             .AllowAnyHeader()
             .AllowAnyMethod();
     });
