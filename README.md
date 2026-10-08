@@ -140,8 +140,3 @@ Frontend:
 http://localhost:5173
 ```
 
-## Geliştirici
-
-**Nihat Akkaya**
-
-GitHub: [@nihatakkaya](https://github.com/nihatakkaya)
