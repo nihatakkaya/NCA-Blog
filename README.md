@@ -8,15 +8,15 @@ Proje; kullanıcı kayıt/giriş sistemi, JWT authentication, refresh token, blo
 
 ### Ana Sayfa
 
-![NCA Ana Sayfa](docs/images/nca-home.jpg)
+![NCA Ana Sayfa](docs/images/nca-home.jpeg)
 
 ### Yönetim Paneli
 
-![NCA Admin Dashboard](docs/images/nca-admin-dashboard.jpg)
+![NCA Admin Dashboard](docs/images/nca-admin-dashboard.jpeg)
 
 ### Blog Yazısı ve Yorumlar
 
-![NCA Post Detay](docs/images/nca-post-detail.jpg)
+![NCA Post Detay](docs/images/nca-post-detail.jpeg)
 
 ## Özellikler
 
