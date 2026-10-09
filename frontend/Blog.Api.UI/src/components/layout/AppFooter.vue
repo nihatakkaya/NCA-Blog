@@ -1,13 +1,15 @@
 <script setup>
+import AppLogo from '@/components/common/AppLogo.vue'
 import { siteConfig } from '@/config/site'
 const year = new Date().getFullYear()
 </script>
 <template>
   <footer class="footer">
     <div class="container footer-inner">
-      <RouterLink class="footer-brand" to="/"
-        >NCA<span>© {{ year }} NCA</span></RouterLink
-      >
+      <div class="footer-branding">
+        <RouterLink to="/" aria-label="NCA ana sayfa"><AppLogo size="small" /></RouterLink
+        ><small>© {{ year }} Nihat Akkaya</small>
+      </div>
       <nav aria-label="Alt menü">
         <RouterLink to="/">Ana Sayfa</RouterLink>
       </nav>

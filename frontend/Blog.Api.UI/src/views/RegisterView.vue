@@ -4,6 +4,7 @@ import { useRouter } from 'vue-router'
 import { authApi } from '@/api/authApi'
 import { apiError } from '@/api/axios'
 import { useNotificationStore } from '@/stores/notification'
+import AppLogo from '@/components/common/AppLogo.vue'
 import BaseInput from '@/components/common/BaseInput.vue'
 import BaseButton from '@/components/common/BaseButton.vue'
 const router = useRouter()
@@ -34,7 +35,8 @@ async function submit() {
 <template>
   <div class="auth-page">
     <div class="auth-card">
-      <img class="auth-logo" src="/nca-logo.png" alt="NCA" /><span class="eyebrow">YENİ HESAP</span>
+      <div class="auth-brand"><AppLogo size="auth" /></div>
+      <span class="eyebrow">YENİ HESAP</span>
       <h1>Kayıt Ol</h1>
       <form @submit.prevent="submit">
         <BaseInput

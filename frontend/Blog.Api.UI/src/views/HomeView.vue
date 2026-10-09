@@ -1,12 +1,13 @@
 <script setup>
 import { ref, watch, onMounted } from 'vue'
 import { useRoute, useRouter } from 'vue-router'
-import { Search, ArrowDown, ArrowLeft, ArrowRight } from 'lucide-vue-next'
+import { ArrowLeft, ArrowRight } from 'lucide-vue-next'
 import { postApi } from '@/api/postApi'
 import { useResource } from '@/composables/useResource'
 import ResourceState from '@/components/common/ResourceState.vue'
 import EmptyState from '@/components/common/EmptyState.vue'
 import PostList from '@/components/posts/PostList.vue'
+import AppLogo from '@/components/common/AppLogo.vue'
 const route = useRoute()
 const router = useRouter()
 const query = ref('')
@@ -38,27 +39,13 @@ onMounted(loadPosts)
 </script>
 <template>
   <div class="container home-page">
-    <section class="hero">
+    <section class="hero" aria-labelledby="hero-title">
       <div class="hero-copy">
         <span class="eyebrow"><span class="accent-dot"></span> KİŞİSEL BLOG</span>
-        <h1>NCA<span class="hero-period">.</span></h1>
-        <form class="hero-search" role="search" @submit.prevent="search">
-          <Search :size="21" aria-hidden="true" /><input
-            v-model="query"
-            type="search"
-            placeholder="Bir yazı, bir konu ara…"
-            aria-label="Blog yazılarında ara"
-          /><button class="button button--primary">Ara</button>
-        </form>
-        <a class="hero-link" href="#posts">Son yazılara git <ArrowDown :size="16" /></a>
+        <h1 id="hero-title">Yazılım, teknoloji ve öğrendiklerim üzerine.</h1>
+        <p class="hero-description">Öğrenme notlarım, projelerim ve günlük düşüncelerim.</p>
       </div>
-      <div class="hero-art" aria-hidden="true">
-        <div class="orbit orbit-one"></div>
-        <div class="orbit orbit-two"></div>
-        <div class="orbit orbit-three"></div>
-        <div class="art-core"><img src="/nca-logo.png" alt="" /></div>
-        <span class="art-dot art-dot-one"></span><span class="art-dot art-dot-two"></span>
-      </div>
+      <div class="hero-art" aria-hidden="true"><AppLogo size="hero" decorative /></div>
     </section>
     <section id="posts" class="section">
       <div class="section-heading">

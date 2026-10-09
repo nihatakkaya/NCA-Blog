@@ -15,7 +15,7 @@ defineProps({ post: { type: Object, required: true } })
       <p class="post-summary">{{ post.summary }}</p>
       <div class="chips"><TagChip v-for="tag in post.tags" :key="tag" :name="tag" /></div>
     </div>
-    <div>
+    <div class="post-card-footer">
       <PostMeta :post="post" /><RouterLink
         class="read-link"
         :to="`/post/${post.id}`"

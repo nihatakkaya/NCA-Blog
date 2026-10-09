@@ -32,6 +32,7 @@ async function submit() {
 </script>
 <template>
   <form v-if="auth.isAuthenticated" class="comment-form" @submit.prevent="submit">
+    <h3>Yorum bırak</h3>
     <label for="comment-content">Yorumunuz</label
     ><textarea
       id="comment-content"
@@ -42,10 +43,17 @@ async function submit() {
       :disabled="busy"
     ></textarea>
     <p v-if="error" class="form-error" role="alert">{{ error }}</p>
-    <BaseButton type="submit" :loading="busy" :disabled="!content.trim()">Yorumu Gönder</BaseButton>
+    <div class="comment-form-actions">
+      <BaseButton type="submit" :loading="busy" :disabled="!content.trim()"
+        >Yorumu Gönder</BaseButton
+      >
+    </div>
   </form>
   <div v-else class="comment-login">
-    <p>Giriş yaparak yorum yazabilirsiniz.</p>
+    <div>
+      <strong>Düşüncelerinizi paylaşın</strong>
+      <p>Giriş yaparak yorum yazabilirsiniz.</p>
+    </div>
     <RouterLink
       class="button button--secondary"
       :to="{ path: '/login', query: { redirect: route.fullPath } }"
