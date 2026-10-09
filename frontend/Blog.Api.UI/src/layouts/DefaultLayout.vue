@@ -3,7 +3,9 @@ import AppNavbar from '@/components/layout/AppNavbar.vue'
 import AppFooter from '@/components/layout/AppFooter.vue'
 </script>
 <template>
-  <AppNavbar />
-  <main id="main-content"><RouterView /></main>
-  <AppFooter />
+  <div class="default-layout">
+    <AppNavbar />
+    <main id="main-content" class="default-content"><RouterView /></main>
+    <AppFooter />
+  </div>
 </template>

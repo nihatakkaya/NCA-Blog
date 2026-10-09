@@ -7,7 +7,7 @@ const year = new Date().getFullYear()
   <footer class="footer">
     <div class="container footer-inner">
       <div class="footer-branding">
-        <RouterLink to="/" aria-label="NCA ana sayfa"><AppLogo size="small" /></RouterLink
+        <RouterLink to="/" aria-label="NCA ana sayfa"><AppLogo size="footer" /></RouterLink
         ><small>© {{ year }} Nihat Akkaya</small>
       </div>
       <nav aria-label="Alt menü">

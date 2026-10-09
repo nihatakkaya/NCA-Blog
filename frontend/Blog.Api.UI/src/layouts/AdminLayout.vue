@@ -1,5 +1,6 @@
 <script setup>
 import { ref } from 'vue'
+import AppFooter from '@/components/layout/AppFooter.vue'
 import { LayoutDashboard, FileText, Plus, Folder, Tags, ArrowLeft, Menu } from 'lucide-vue-next'
 const open = ref(false)
 const links = [
@@ -34,6 +35,9 @@ const links = [
         ><RouterLink to="/"><ArrowLeft :size="18" />Siteye Dön</RouterLink>
       </nav>
     </aside>
-    <main id="main-content" class="admin-content"><RouterView /></main>
+    <div class="admin-workspace">
+      <main id="main-content" class="admin-content"><RouterView /></main>
+      <AppFooter />
+    </div>
   </div>
 </template>

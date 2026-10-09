@@ -6,7 +6,12 @@ html {
 }
 body {
   margin: 0;
-  background: var(--color-background);
+  background-color: var(--color-background);
+  background-image:
+    radial-gradient(ellipse at 15% 0, rgb(51 183 103 / 4%), transparent 65%),
+    radial-gradient(ellipse at 85% 0, rgb(26 103 134 / 2.5%), transparent 60%);
+  background-size: 100% 640px;
+  background-repeat: no-repeat;
   color: var(--color-text);
   font-family: var(--font);
   font-size: 15px;
@@ -368,8 +373,9 @@ fieldset {
   font-weight: 500;
 }
 .footer {
+  flex-shrink: 0;
   border-top: 1px solid var(--color-border);
-  background: white;
+  background: #f9fbfa;
   padding: 20px 0;
 }
 .footer-inner {
@@ -1210,8 +1216,9 @@ fieldset {
   margin-top: auto;
 }
 .footer-branding {
-  display: grid;
-  gap: 6px;
+  display: flex;
+  align-items: center;
+  gap: 20px;
 }
 .footer-branding small {
   font-size: 11px;
@@ -1300,5 +1307,69 @@ fieldset {
   }
   .footer nav {
     padding-top: 0;
+  }
+}
+
+#app {
+  min-height: 100vh;
+  min-height: 100svh;
+  display: flex;
+  flex-direction: column;
+}
+.default-layout {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+}
+.default-content {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+}
+.default-layout .navbar {
+  flex-shrink: 0;
+}
+.default-layout .auth-page {
+  flex: 1;
+  min-height: 0;
+  padding: clamp(32px, 5vh, 48px) 20px;
+  background: transparent;
+}
+.admin-shell {
+  flex: 1;
+  min-height: 100svh;
+}
+.admin-workspace {
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+}
+.admin-workspace .admin-content {
+  flex: 1;
+}
+.admin-workspace .footer .container {
+  width: calc(100% - 60px);
+}
+.footer-branding small {
+  white-space: nowrap;
+}
+@media (max-width: 900px) {
+  .admin-shell {
+    grid-template-rows: auto minmax(0, 1fr);
+  }
+}
+@media (max-width: 600px) {
+  .footer-branding {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+  .footer-inner {
+    gap: 16px 24px;
+  }
+  .admin-workspace .footer .container {
+    width: calc(100% - 36px);
   }
 }

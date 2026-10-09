@@ -24,6 +24,9 @@ defineProps({ size: { type: String, default: 'default' }, decorative: Boolean })
   height: auto;
   transform: translate(-50%, -50%);
 }
+.app-logo--footer {
+  width: 128px;
+}
 .app-logo--small {
   width: 86px;
 }
@@ -34,6 +37,9 @@ defineProps({ size: { type: String, default: 'default' }, decorative: Boolean })
   width: 210px;
 }
 @media (max-width: 600px) {
+  .app-logo--footer {
+    width: 104px;
+  }
   .app-logo--hero {
     width: 82px;
   }
